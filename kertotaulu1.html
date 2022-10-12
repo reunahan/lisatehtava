@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="tyylit\tyyli.css">
+        <title>Kertotaulu</title>
+    </head>
+
+    <body onload="">
+        <form>
+            <label for="luku">Luku (1-10): </label>
+            <input type="number" id="luku" name="luku" min="1" max="10" value="5">
+            <input onclick="kertotaulu(document.getElementById('luku').value);"type="button" id="nappi" name="nappi" value="Nayta">
+        </form>
+        <div id="kertotaulu"> </div>
+
+        <script>
+            "use strict";
+
+            function kertotaulu(luku) {
+                let kertotaulu = "<p>" + luku + ":n kertotaulu:</p>\n";
+
+                for (let i = 0; i < 10; i++){
+                    kertotaulu = kertotaulu + "<p>" + (i + 1) + " x " +
+                        luku + " = " + ((i + 1) * luku) + "</p>\n";
+                }
+
+                document.getElementById('kertotaulu').innerHTML = kertotaulu;
+                console.log(kertotaulu);
+            }
+
+
+            //virheilmoitus
+
+        </script>
+
+    
+    </body>
+
+</html>
